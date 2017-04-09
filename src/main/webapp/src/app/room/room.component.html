@@ -1,0 +1,24 @@
+<h1>
+  {{title}}
+  <button class="btn btn-danger pull-right" onclick="window.history.back()">
+    Повернутись
+    <span class="	glyphicon glyphicon-menu-right"></span>
+  </button>
+</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Price</th>
+    <th>Places</th>
+    <th>Photo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let room of rooms | async">
+    <td>{{room.price}}</td>
+    <td>{{room.placeCount}}</td>
+    <td>{{room.photo}}</td>
+  </tr>
+  </tbody>
+</table>

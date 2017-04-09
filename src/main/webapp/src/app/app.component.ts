@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   title = 'Rooms';
   rooms: Observable<Room[]>;
 
-
   constructor(private roomService: RoomService) { }
 
   ngOnInit() {

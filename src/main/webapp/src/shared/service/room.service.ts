@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class RoomService {
-  baseUrl: string = `${environment.baseUrl}/rooms`;
+  baseUrl: string = `${environment.baseUrl}/rest/rooms`;
 
   constructor(private http: Http) {}
 

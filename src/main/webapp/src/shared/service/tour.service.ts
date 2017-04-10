@@ -7,7 +7,7 @@ import {Tour} from "../model/tour.model";
 
 @Injectable()
 export class TourService {
-  baseUrl: string = `${environment.baseUrl}/tours`;
+  baseUrl: string = `${environment.baseUrl}/rest/tours`;
 
   constructor(private http: Http) {}
 

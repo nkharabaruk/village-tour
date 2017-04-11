@@ -1,18 +1,44 @@
 <div class="container">
-  <div class="h1 text-center">Бронювання турів онлайн</div>
+  <div class="row">
+    <button class="btn btn-info" routerLink="tours">Переглянути тури</button>
+    <button class="btn btn-info" routerLink="places">Переглянути місцевості</button>
+    <button class="btn btn-info" routerLink="rooms">Переглянути кімнати</button>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 150px">
+  <div class="h1 text-center" style="font-size: 60pt">Тури в сільській місцевості</div>
+  <div class="h2 text-center">Бронювання онлайн</div>
+
   <div class="well">
+
     <div class="row">
-      <span class="col-md-2">Куди їдемо</span>
-      <span class="col-md-2">Звідки відправляємось</span>
-      <span class="col-md-2">Початок туру</span>
-      <span class="col-md-2">Тривалість туру</span>
-      <span class="col-md-2">Кількість осіб</span>
-      <span class="btn btn-success">Знайти тури</span>
+      <span class="col-md-2"><b>Куди їдемо</b></span>
+      <span class="col-md-2"><b>Звідки відправляємось</b></span>
+      <span class="col-md-2"><b>Початок туру</b></span>
+      <span class="col-md-2"><b>Тривалість туру</b></span>
+      <span class="col-md-2"><b>Кількість осіб</b></span>
+      <span class="btn btn-success"><b>Знайти тури</b></span>
     </div>
+
     <div class="row">
       <span class="col-md-2">
+        <div class="dropdown" dropdown [dropdownToggle]="false">
+          <div class="btn-group">
+            <button class="btn btn-default" dropdown-open (click)="setButtonName($event.target, 'saving')">Місцевість</button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let place of places"><a>{{place.name}}</a></li>
+            </ul>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+          </div>
+        </div>
+      </span>
+
+      <span class="col-md-2">
         <div class="btn-group">
-          <button type="button" class="btn btn-default">Куди їдемо</button>
+          <button type="button" class="btn btn-default">Оберіть країну</button>
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="caret"></span>
             <span class="sr-only">Toggle Dropdown</span>
@@ -26,15 +52,57 @@
           </ul>
         </div>
       </span>
-      <span class="col-md-2"></span>
-      <span class="col-md-2"></span>
-      <span class="col-md-2"></span>
-      <span class="col-md-2"></span>
+      <span class="col-md-2">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Оберіть дату</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </span>
+      <span class="col-md-2">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Кількість днів</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </span>
+      <span class="col-md-2">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Кількість осіб</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+          </ul>
+        </div>
+      </span>
       <span class="col-md-2"></span>
     </div>
   </div>
-  <div class="row">
-    <button class="btn btn-info" routerLink="tours">Переглянути тури</button>
-    <button class="btn btn-info" routerLink="rooms">Переглянути кімнати</button>
-  </div>
+
 </div>

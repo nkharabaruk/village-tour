@@ -8,7 +8,7 @@ import {Room} from "../../shared/model/room.model";
   templateUrl: "./room.component.html"
 })
 export class RoomComponent implements OnInit {
-  title = "Rooms";
+  title = "Кімнати";
   rooms: Observable<Room[]>;
 
   constructor(private roomService: RoomService) { }

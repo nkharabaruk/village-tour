@@ -9,7 +9,7 @@ import {Tour} from "../../shared/model/tour.model";
   styleUrls: ['./tour.component.scss']
 })
 export class TourComponent implements OnInit {
-  title = "Tours";
+  title = "Тури";
   tours: Observable<Tour[]>;
 
   constructor(private tourService: TourService) { }

@@ -10,7 +10,7 @@ import {environment} from "../environments/environment";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Rooms';
+  title = 'Кімнати';
   rooms: Observable<Room[]>;
   img_src: string = `${environment.baseUrl}/files/img`;
 

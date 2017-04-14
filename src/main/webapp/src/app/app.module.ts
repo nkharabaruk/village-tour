@@ -6,6 +6,7 @@ import {routes} from "./app.router";
 import {AppComponent} from "./app.component";
 import {RoomService} from "../shared/service/room.service";
 import {BsDropdownModule, ButtonsModule} from "ngx-bootstrap";
+import {DatePickerModule} from "ng2-datepicker";
 import {RoomComponent} from "./room/room.component";
 import {HomeComponent} from "./home/home.component";
 import {TourComponent} from "./tour/tour.component";
@@ -13,6 +14,8 @@ import {TourService} from "../shared/service/tour.service";
 import {PlaceComponent} from "./place/place.component";
 import {PlaceService} from "../shared/service/place.service";
 import {DropdownModule} from "ng2-dropdown";
+import { ReservationComponent } from './reservation/reservation.component';
+import {ReservationService} from "../shared/service/reservation.service";
 
 @NgModule({
   declarations: [
@@ -20,18 +23,20 @@ import {DropdownModule} from "ng2-dropdown";
     RoomComponent,
     HomeComponent,
     TourComponent,
-    PlaceComponent
+    PlaceComponent,
+    ReservationComponent
   ],
   imports: [
     ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
+    DatePickerModule,
     DropdownModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     routes
   ],
-  providers: [TourService, RoomService, PlaceService],
+  providers: [TourService, RoomService, PlaceService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

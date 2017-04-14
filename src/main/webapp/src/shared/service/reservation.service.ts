@@ -1,0 +1,19 @@
+import {environment} from "../../environments/environment";
+import {Observable} from "rxjs";
+import 'rxjs/add/operator/map';
+import {Reservation} from "../model/reservation.model";
+import {Http} from "@angular/http";
+import {Injectable} from "@angular/core";
+
+@Injectable()
+export class ReservationService {
+  baseUrl: string = `${environment.baseUrl}/rest/reservations`;
+
+  constructor(private http: Http) {}
+
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get(this.baseUrl).map(response => {
+      return response.json()._embedded.reservations as Reservation[];
+    });
+  }
+}

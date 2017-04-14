@@ -16,9 +16,13 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public byte[] getFile(String relativePath) throws IOException {
-        InputStream inputStream = new FileInputStream(filesDirPath + relativePath);
-        byte[] fileBytes = new byte[inputStream.available()];
-        inputStream.read(fileBytes);
-        return fileBytes;
+        try (InputStream inputStream = new FileInputStream(filesDirPath + relativePath)) {
+            byte[] fileBytes = new byte[inputStream.available()];
+            inputStream.read(fileBytes);
+            return fileBytes;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

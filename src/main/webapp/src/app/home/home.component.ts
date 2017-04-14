@@ -9,11 +9,16 @@ import {PlaceService} from "../../shared/service/place.service";
 })
 export class HomeComponent implements OnInit {
   places: Place[];
+  dropdownTittle: string;
 
   constructor(private placeService: PlaceService) { }
 
   ngOnInit() {
-    this.placeService.getPlaces().subscribe((places) => this.places = places);
+    this.dropdownTittle = "Місцевість";
+    this.placeService.getPlaces().subscribe((places) => {
+      this.places = places;
+      console.log(places);
+    });
   }
 
   setButtonName(button, text){

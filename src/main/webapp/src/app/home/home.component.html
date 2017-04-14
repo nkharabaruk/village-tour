@@ -25,9 +25,9 @@
       <span class="col-md-2">
         <div class="dropdown" dropdown [dropdownToggle]="false">
           <div class="btn-group">
-            <button class="btn btn-default" dropdown-open (click)="setButtonName($event.target, 'saving')">Місцевість</button>
+            <button class="btn btn-default" dropdown-open>{{dropdownTittle}}</button>
             <ul class="dropdown-menu">
-              <li *ngFor="let place of places"><a>{{place.name}}</a></li>
+              <li *ngFor="let place of places" (click)="dropdownTittle = place.name"><a>{{place.name}}</a></li>
             </ul>
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="caret"></span>

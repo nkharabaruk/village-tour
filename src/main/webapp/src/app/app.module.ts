@@ -1,6 +1,6 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {routes} from "./app.router";
 import {AppComponent} from "./app.component";
@@ -14,7 +14,7 @@ import {PlaceService} from "../shared/service/place.service";
 import {DropdownModule} from "ng2-dropdown";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ReservationService} from "../shared/service/reservation.service";
-import { HouseComponent } from './house/house.component';
+import {HouseComponent} from './house/house.component';
 import {HouseService} from "../shared/service/house.service";
 
 @NgModule({
@@ -33,6 +33,7 @@ import {HouseService} from "../shared/service/house.service";
     DropdownModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routes
   ],

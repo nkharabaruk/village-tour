@@ -21,7 +21,7 @@ public class FileController {
     }
 
     @GetMapping("/files/**")
-    public void getImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void getFile(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String path = request.getAttribute(HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE).toString().substring("/files/".length());
         byte[] imageBytes = fileService.getFile(path);
         response.setContentLength(imageBytes.length);

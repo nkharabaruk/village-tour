@@ -7,13 +7,11 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class PlaceService {
-  baseUrl: string = `${environment.baseUrl}/rest/places`;
+  baseUrl: string = `${environment.rest}/places`;
 
   constructor(private http: Http) {}
 
   getPlaces(): Observable<Place[]> {
-    return this.http.get(this.baseUrl).map(response => {
-      return response.json()._embedded.places as Place[];
-    });
+    return this.http.get(this.baseUrl).map(response => response.json()._embedded.places as Place[]);
   }
 }

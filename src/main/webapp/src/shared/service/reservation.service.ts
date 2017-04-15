@@ -7,13 +7,11 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class ReservationService {
-  baseUrl: string = `${environment.baseUrl}/rest/reservations`;
+  baseUrl: string = `${environment.rest}/reservations`;
 
   constructor(private http: Http) {}
 
   getReservations(): Observable<Reservation[]> {
-    return this.http.get(this.baseUrl).map(response => {
-      return response.json()._embedded.reservations as Reservation[];
-    });
+    return this.http.get(this.baseUrl).map(response => response.json()._embedded.reservations as Reservation[]);
   }
 }

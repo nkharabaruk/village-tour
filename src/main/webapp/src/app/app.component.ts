@@ -12,7 +12,7 @@ import {environment} from "../environments/environment";
 export class AppComponent implements OnInit {
   title = 'Кімнати';
   rooms: Observable<Room[]>;
-  img_src: string = `${environment.baseUrl}/files/img`;
+  img_src: string = `${environment.files}/img`;
 
   constructor(private roomService: RoomService) {
   }

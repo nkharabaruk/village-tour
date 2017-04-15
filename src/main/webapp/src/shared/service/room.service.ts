@@ -7,13 +7,11 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class RoomService {
-  baseUrl: string = `${environment.baseUrl}/rest/rooms`;
+  baseUrl: string = `${environment.rest}/rooms`;
 
   constructor(private http: Http) {}
 
   getRooms(): Observable<Room[]> {
-    return this.http.get(this.baseUrl).map(response => {
-      return response.json()._embedded.rooms as Room[];
-    });
+    return this.http.get(this.baseUrl).map(response => response.json()._embedded.rooms as Room[]);
   }
 }

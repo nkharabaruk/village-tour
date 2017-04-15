@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080'
+  rest: 'http://localhost:8080/rest',
+  files: 'http://localhost:8080/files'
 };

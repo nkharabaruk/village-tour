@@ -14,6 +14,8 @@ import {PlaceService} from "../shared/service/place.service";
 import {DropdownModule} from "ng2-dropdown";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ReservationService} from "../shared/service/reservation.service";
+import { HouseComponent } from './house/house.component';
+import {HouseService} from "../shared/service/house.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {ReservationService} from "../shared/service/reservation.service";
     RoomComponent,
     HomeComponent,
     PlaceComponent,
-    ReservationComponent
+    ReservationComponent,
+    HouseComponent
   ],
   imports: [
     ButtonsModule.forRoot(),
@@ -33,11 +36,7 @@ import {ReservationService} from "../shared/service/reservation.service";
     HttpModule,
     routes
   ],
-  providers: [
-    RoomService,
-    PlaceService,
-    ReservationService
-  ],
+  providers: [HouseService, RoomService, PlaceService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

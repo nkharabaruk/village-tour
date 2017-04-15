@@ -15,8 +15,8 @@
       <div class="col-md-10">
         <div class="row">
           <span class="col-md-3"><b>Куди їдемо</b></span>
-          <span class="col-md-3"><b>Початок туру</b></span>
-          <span class="col-md-3"><b>Кінець туру</b></span>
+          <span class="col-md-3"><b>Дата туру</b></span>
+          <span class="col-md-3"><b>Кількість днів</b></span>
           <span class="col-md-3"><b>Кількість осіб</b></span>
         </div>
         <div class="row">
@@ -36,11 +36,25 @@
           </div>
 
           <div class="col-md-3">
-            <ng2-datepicker [(ngModel)]="dateStart"></ng2-datepicker>
+            <ng2-datepicker [(ngModel)]="date"></ng2-datepicker>
           </div>
 
           <div class="col-md-3">
-            <ng2-datepicker [(ngModel)]="dateFinish"></ng2-datepicker>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Кількість днів</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="col-md-3">

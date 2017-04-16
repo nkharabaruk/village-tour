@@ -14,4 +14,8 @@ export class ReservationService {
   getReservations(): Observable<Reservation[]> {
     return this.http.get(this.baseUrl).map(response => response.json()._embedded.reservations as Reservation[]);
   }
+
+  getReservation(id:number): Observable<Reservation> {
+    return this.http.get(this.baseUrl).map(response => response.json()._embedded.reservation as Reservation);
+  }
 }

@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 
 @Data
 @Entity
@@ -12,10 +14,14 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     LocalDate operationDate;
-    @OneToOne
-    Room room;
+    @OneToMany
+    Collection<Room> room;
     LocalDate checkInDate;
     LocalDate checkOutDate;
     Integer personCount;
     String description;
+
+    Long getDayCount() {
+        return checkInDate.until(checkOutDate, ChronoUnit.DAYS);
+    }
 }

@@ -1,3 +1,4 @@
+<script src="reservation.component.spec.ts"></script>
 <h1>
   {{title}}
   <button class="btn btn-danger pull-right" onclick="window.history.back()">
@@ -8,21 +9,26 @@
 
 <table class="table table-striped">
   <thead>
-  <tr>
-    <th>Дата заселення</th>
-    <th>Кількість днів</th>
-    <th>Кількість осіб</th>
-    <th>Дата операції</th>
-    <th>Опис</th>
-  </tr>
+    <tr>
+      <th>Дата заселення</th>
+      <th>Кількість днів</th>
+      <th>Кількість осіб</th>
+      <th>Дата операції</th>
+      <th>Опис</th>
+      <th>Переглянути</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let reservation of reservations | async">
-    <td>{{reservation.check_in_date}}</td>
-    <td>{{reservation.day_count}}</td>
-    <td>{{reservation.person_count}}</td>
-    <td>{{reservation.operation_date}}</td>
-    <td>{{reservation.description}}</td>
-  </tr>
+    <tr *ngFor="let reservation of reservations | async">
+      <td>{{reservation.checkInDate}}</td>
+      <td>{{reservation.dayCount}}</td>
+      <td>{{reservation.personCount}}</td>
+      <td>{{reservation.operationDate}}</td>
+      <td>{{reservation.description}}</td>
+      <td><div class="btn" routerLink="{{
+        reservation._links.reservation.href.substring(
+        reservation._links.reservation.href.lastIndexOf('/') + 1,
+        reservation._links.reservation.href.length)}}">Перейти</div></td>
+    </tr>
   </tbody>
 </table>

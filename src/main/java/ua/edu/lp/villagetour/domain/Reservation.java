@@ -13,11 +13,9 @@ public class Reservation {
     Long id;
     LocalDate operationDate;
     @OneToOne
-    RentHouse rentHouse;
-    @OneToOne
     Room room;
     LocalDate checkInDate;
-    Integer dayCount;
+    LocalDate checkOutDate;
     Integer personCount;
     String description;
 }

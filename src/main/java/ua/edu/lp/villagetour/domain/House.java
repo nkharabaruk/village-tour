@@ -14,9 +14,11 @@ public class House {
     Long id;
     HouseType type;
     String name;
+    @ManyToOne
+    Locality locality;
     String address;
     String description;
-    @OneToMany
+    @OneToMany(mappedBy = "house")
     Collection<Room> rooms;
     String photo;
 }

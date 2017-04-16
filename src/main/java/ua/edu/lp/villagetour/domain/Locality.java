@@ -3,14 +3,15 @@ package ua.edu.lp.villagetour.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Data
 @Entity
-public class RentHouse {
+public class Locality {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    @OneToOne
-    House house;
-    String description;
+    String name;
+    @OneToMany
+    Collection<Place> places;
 }

@@ -14,4 +14,9 @@ export class RoomService {
   getRooms(): Observable<Room[]> {
     return this.http.get(this.baseUrl).map(response => response.json()._embedded.rooms as Room[]);
   }
+
+  getRoom(id:number): Observable<Room> {
+    return this.http.get(`${this.baseUrl}/${id}`)
+      .map(response => response.json() as Room);
+  }
 }

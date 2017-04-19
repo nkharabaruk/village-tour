@@ -1,24 +1,26 @@
 <h1>
   {{title}}
-  <button class="btn btn-danger pull-right" onclick="window.history.back()">
-    Повернутись
-    <span class="	glyphicon glyphicon-menu-right"></span>
-  </button>
 </h1>
 
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Price</th>
-    <th>Places</th>
     <th>Photo</th>
+    <th>Тип</th>
+    <th>Ціна</th>
+    <th>Кількість місць</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let room of rooms | async">
+    <td><img class="img-responsive img-rounded" src="{{img_src}}/1.png" style="height: 100px; width: 100px"></td>
+    <td>{{room.type}}</td>
     <td>{{room.price}}</td>
     <td>{{room.placeCount}}</td>
-    <td>{{room.photo}}</td>
+    <td>
+      <button class="btn btn-info pull-right" routerLink="{{room.id}}">Обрати</button>
+    </td>
   </tr>
   </tbody>
 </table>

@@ -23,11 +23,6 @@ export class HouseService {
       .map(response => response.json() as House);
   }
 
-  // getHouse(id: number): Observable<House> {
-  //   return this.getHouses()
-  //     .map(houses => houses.find(house => house.id == id));
-  // }
-
   findByTypeOrNameOrAddress(type: string, name: string, address: string): Observable<House[]> {
     return this.http.get(`${this.baseUrl}/search/findByTypeOrNameOrAddress`,
       {

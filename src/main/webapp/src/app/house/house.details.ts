@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs/Observable";
 import {House} from "../../shared/model/house.model";
 import {HouseService} from "../../shared/service/house.service";
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'app-house',
+  selector: 'app-house-details',
   templateUrl: './house.details.html',
   styleUrls: ['./house.component.scss'],
 })

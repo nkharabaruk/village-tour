@@ -18,11 +18,13 @@ import {HouseComponent} from './house/house.component';
 import {HouseService} from "../shared/service/house.service";
 import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "./house/house.details";
+import {RoomDetails} from "./room/room.details";
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomComponent,
+    RoomDetails,
     HomeComponent,
     PlaceComponent,
     ReservationComponent,

@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'app-reservation',
+  selector: 'app-reservation-details',
   templateUrl: './reservation.details.html',
   styleUrls: ['./reservation.component.scss'],
 })

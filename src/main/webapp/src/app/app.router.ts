@@ -8,6 +8,7 @@ import {ReservationComponent} from "./reservation/reservation.component";
 import {HouseComponent} from "./house/house.component";
 import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "app/house/house.details";
+import {RoomDetails} from "./room/room.details";
 
 export const router: Routes = [
   {path: '', component: HomeComponent},
@@ -16,6 +17,7 @@ export const router: Routes = [
   {path: 'houses', component: HouseComponent},
   {path: 'houses/:id', component: HouseDetails},
   {path: 'rooms', component: RoomComponent},
+  {path: 'rooms/:id', component: RoomDetails},
   {path: 'places', component: PlaceComponent}
 ];
 

@@ -1,0 +1,38 @@
+<h1>
+  {{title}}
+  <button class="btn btn-danger pull-right" onclick="window.history.back()">
+    Повернутись
+    <span class="glyphicon glyphicon-menu-right"></span>
+  </button>
+</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5" style="height:400px; border: 2px solid black">
+      <img class="img-responsive img-rounded" src="{{img_src}}/1.png">
+    </div>
+    <div class="col-md-6">
+      <table class="table table-striped" style="cursor: pointer">
+        <thead>
+        <tr>
+          <th colspan="2">{{house.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Тип будинку</td>
+            <td>{{house.type}}</td>
+          </tr>
+          <tr>
+            <td>Адреса</td>
+            <td>{{house.address}}</td>
+          </tr>
+          <tr>
+            <td>Опис</td>
+            <td>{{house.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

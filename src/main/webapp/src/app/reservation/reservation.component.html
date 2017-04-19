@@ -25,10 +25,7 @@
       <td>{{reservation.personCount}}</td>
       <td>{{reservation.operationDate}}</td>
       <td>{{reservation.description}}</td>
-      <td><div class="btn" routerLink="{{
-        reservation._links.reservation.href.substring(
-        reservation._links.reservation.href.lastIndexOf('/') + 1,
-        reservation._links.reservation.href.length)}}">Перейти</div></td>
+      <td><div class="btn" routerLink="{{reservation.id}}">Перейти</div></td>
     </tr>
   </tbody>
 </table>

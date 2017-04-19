@@ -13,8 +13,20 @@ export class HouseService {
   }
 
   getHouses(): Observable<House[]> {
-    return this.http.get(this.baseUrl).map(response => response.json()._embedded.houses as House[]);
+    return this.http.get(this.baseUrl)
+      .map(response => response.json()
+        ._embedded.houses as House[]);
   }
+
+  getHouse(id:number): Observable<House> {
+    return this.http.get(`${this.baseUrl}/${id}`)
+      .map(response => response.json() as House);
+  }
+
+  // getHouse(id: number): Observable<House> {
+  //   return this.getHouses()
+  //     .map(houses => houses.find(house => house.id == id));
+  // }
 
   findByTypeOrNameOrAddress(type: string, name: string, address: string): Observable<House[]> {
     return this.http.get(`${this.baseUrl}/search/findByTypeOrNameOrAddress`,

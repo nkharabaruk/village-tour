@@ -16,7 +16,8 @@ import {ReservationComponent} from "./reservation/reservation.component";
 import {ReservationService} from "../shared/service/reservation.service";
 import {HouseComponent} from './house/house.component';
 import {HouseService} from "../shared/service/house.service";
-import {ReservationEntity} from "./reservation/reservation.entity";
+import {ReservationDetails} from "./reservation/reservation.details";
+import {HouseDetails} from "./house/house.details";
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import {ReservationEntity} from "./reservation/reservation.entity";
     HomeComponent,
     PlaceComponent,
     ReservationComponent,
-    ReservationEntity,
-    HouseComponent
+    ReservationDetails,
+    HouseComponent,
+    HouseDetails
   ],
   imports: [
     ButtonsModule.forRoot(),

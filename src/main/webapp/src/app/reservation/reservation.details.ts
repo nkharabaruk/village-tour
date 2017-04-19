@@ -3,16 +3,18 @@ import {Observable} from "rxjs/Observable";
 import {Reservation} from "../../shared/model/reservation.model";
 import {ReservationService} from "../../shared/service/reservation.service";
 import {ActivatedRoute} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
+  templateUrl: './reservation.details.html',
   styleUrls: ['./reservation.component.scss'],
 })
-export class ReservationEntity implements OnInit {
-  title = "Ваша Резервація";
+export class ReservationDetails implements OnInit {
+  title = "Бронювання";
   reservation: Observable<Reservation>;
   reservationId: number;
+  img_src: string = `${environment.files}/img`;
 
   constructor(private reservationService: ReservationService,
               private activatedRoute: ActivatedRoute) { }

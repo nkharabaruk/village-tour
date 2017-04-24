@@ -19,7 +19,7 @@ export class HouseService {
   }
 
   getHouse(id:number): Observable<House> {
-    return this.http.get(`${this.baseUrl}/${id}`)
+    return this.http.get(`${this.baseUrl}/${id}?projection=houseWithRooms`)
       .map(response => response.json() as House);
   }
 

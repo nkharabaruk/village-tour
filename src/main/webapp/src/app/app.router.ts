@@ -16,6 +16,7 @@ export const router: Routes = [
   {path: 'reservations/:id', component: ReservationDetails},
   {path: 'houses', component: HouseComponent},
   {path: 'houses/:id', component: HouseDetails},
+  {path: 'houses/:id/:id', redirectTo: 'rooms/:id', pathMatch: 'full'},
   {path: 'rooms', component: RoomComponent},
   {path: 'rooms/:id', component: RoomDetails},
   {path: 'places', component: PlaceComponent}

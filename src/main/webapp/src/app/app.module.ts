@@ -19,6 +19,8 @@ import {HouseService} from "../shared/service/house.service";
 import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "./house/house.details";
 import {RoomDetails} from "./room/room.details";
+import {LoginComponent } from './login/login.component';
+import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {RoomDetails} from "./room/room.details";
     ReservationComponent,
     ReservationDetails,
     HouseComponent,
-    HouseDetails
+    HouseDetails,
+    LoginComponent
   ],
   imports: [
     ButtonsModule.forRoot(),
@@ -39,6 +42,7 @@ import {RoomDetails} from "./room/room.details";
     DropdownModule,
     BrowserModule,
     FormsModule,
+    Ng2PopupModule,
     ReactiveFormsModule,
     HttpModule,
     routes

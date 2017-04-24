@@ -8,11 +8,34 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-5" style="height:400px; border: 2px solid black">
-      <img class="img-responsive img-rounded" src="{{img_src}}/1.png">
-    </div>
-  </div>
-  <div class="row">
-    {{reservation.id}}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th colspan="2">{{reservation.name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td style="font-weight: bold">Дата заселення</td>
+        <td>{{reservation.checkInDate}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Кількість днів</td>
+        <td>{{reservation.dayCount}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Кількість осіб</td>
+        <td>{{reservation.personCount}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Дата операції</td>
+        <td>{{reservation.operationDate}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Опис</td>
+        <td>{{reservation.description}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>

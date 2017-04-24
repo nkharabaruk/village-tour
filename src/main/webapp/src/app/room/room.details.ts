@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Room} from "../../shared/model/room.model";
 import {RoomService} from "../../shared/service/room.service";
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../environments/environment";
+import {Ng2MessagePopupComponent, Ng2PopupComponent} from "ng2-popup";
 
 @Component({
   selector: 'app-room-details',
@@ -15,18 +16,25 @@ export class RoomDetails implements OnInit {
   roomId: number;
   img_src: string = `${environment.files}/img`;
   private sub: any;
+  @ViewChild(Ng2PopupComponent) popup: Ng2PopupComponent;
 
   constructor(private roomService: RoomService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
-      this.roomId = +params['id'];
+      this.roomId = +params['r_id'];
     });
 
     this.roomService.getRoom(this.roomId)
       .subscribe(room => this.room = room);
-    console.log(this.roomId);
+  }
+
+  openPopup() {
+    this.popup.open(Ng2MessagePopupComponent, {
+      title: 'My Title',
+      message: 'My Message'
+    })
   }
 
   ngOnDestroy() {

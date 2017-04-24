@@ -21,12 +21,11 @@ export class HouseDetails implements OnInit {
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
-      this.houseId = +params['id'];
+      this.houseId = +params['h_id'];
     });
 
     this.houseService.getHouse(this.houseId)
       .subscribe(house => this.house = house);
-    console.log(this.houseId);
   }
 
   ngOnDestroy() {

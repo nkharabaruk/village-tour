@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
     this.person = "Кількість осіб";
     this.placeService.getPlaces().subscribe((places) => {
       this.places = places;
-      console.log(places);
     });
   }
 

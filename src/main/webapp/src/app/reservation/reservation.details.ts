@@ -12,20 +12,22 @@ import {environment} from "../../environments/environment";
 })
 export class ReservationDetails implements OnInit {
   title = "Бронювання";
-  reservation: Observable<Reservation>;
+  reservation: Reservation = <Reservation>{};
   reservationId: number;
   img_src: string = `${environment.files}/img`;
+  private sub: any;
 
   constructor(private reservationService: ReservationService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.reservationId = params['id'];
+
+    this.sub = this.activatedRoute.params.subscribe(params => {
+      this.reservationId = +params['res_id'];
     });
 
-    this.reservation = this.reservationService.getReservation(this.reservationId);
-    console.log(this.reservation);
+    this.reservationService.getReservation(this.reservationId)
+      .subscribe(reservation => this.reservation = reservation);
   }
 
 }

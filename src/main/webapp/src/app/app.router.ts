@@ -13,12 +13,14 @@ import {RoomDetails} from "./room/room.details";
 export const router: Routes = [
   {path: '', component: HomeComponent},
   {path: 'reservations', component: ReservationComponent},
-  {path: 'reservations/:id', component: ReservationDetails},
+  {path: 'reservations/:res_id', component: ReservationDetails},
   {path: 'houses', component: HouseComponent},
-  {path: 'houses/:id', component: HouseDetails},
-  {path: 'houses/:id/:id', redirectTo: 'rooms/:id', pathMatch: 'full'},
+  {path: 'houses/:h_id', component: HouseDetails},
+  {path: 'houses/:h_id/rooms/:r_id', component: RoomDetails},
+  {path: 'houses/:h_id/:r_id', redirectTo: 'houses/:h_id/rooms/:r_id', pathMatch: 'full'},
+  {path: 'houses/:h_id/rooms/:r_id/reservations', redirectTo: 'reservations', pathMatch: 'full'},
   {path: 'rooms', component: RoomComponent},
-  {path: 'rooms/:id', component: RoomDetails},
+  {path: 'rooms/:r_id', component: RoomDetails},
   {path: 'places', component: PlaceComponent}
 ];
 

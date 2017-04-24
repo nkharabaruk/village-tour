@@ -9,7 +9,7 @@ import {ReservationService} from "../../shared/service/reservation.service";
   styleUrls: ['./reservation.component.scss']
 })
 export class ReservationComponent implements OnInit {
-  title = "Резервації";
+  title = "Ваші резервації";
   reservations: Observable<Reservation[]>;
 
   constructor(private reservationService: ReservationService) { }

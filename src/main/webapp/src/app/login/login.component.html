@@ -4,7 +4,7 @@
   </button>
 </div>
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div #dialog class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <h1>Введіть ваші дані</h1><br>
@@ -12,7 +12,7 @@
         <input type="text" name="name" placeholder="Ім'я">
         <input type="text" name="surname" placeholder="Прізвище">
         <input type="text" name="phone" placeholder="Номер телефону">
-        <input type="submit" name="login" class="login loginmodal-submit" value="Гаразд" (click)="submitForm()">
+        <input type="submit" name="login" class="login loginmodal-submit" value="Гаразд" (click)="submitForm()" data-toggle="modal" data-target="#login-modal">
       </form>
     </div>
   </div>

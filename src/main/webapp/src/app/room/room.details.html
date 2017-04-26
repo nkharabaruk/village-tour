@@ -49,10 +49,9 @@
   Кнопка
 </button>
 
-<ng2-popup #popup></ng2-popup>
-
-
-<script>
-  $(document.body).append(form);
-  document.body.appendChild(form);
-</script>
+<popup>
+  <form>
+    <input style="width: 100%" type="text" placeholder="Name">
+    <input type="text" placeholder="Phone">
+  </form>
+</popup>

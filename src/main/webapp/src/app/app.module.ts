@@ -20,7 +20,7 @@ import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "./house/house.details";
 import {RoomDetails} from "./room/room.details";
 import {LoginComponent } from './login/login.component';
-import {Ng2PopupModule} from "ng2-popup";
+import {PopupModule} from "ng2-opd-popup";
 
 @NgModule({
   declarations: [
@@ -38,11 +38,11 @@ import {Ng2PopupModule} from "ng2-popup";
   imports: [
     ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
+    PopupModule.forRoot(),
     DatePickerModule,
     DropdownModule,
     BrowserModule,
     FormsModule,
-    Ng2PopupModule,
     ReactiveFormsModule,
     HttpModule,
     routes

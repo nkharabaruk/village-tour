@@ -3,7 +3,7 @@ import {Room} from "../../shared/model/room.model";
 import {RoomService} from "../../shared/service/room.service";
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../environments/environment";
-import {Ng2MessagePopupComponent, Ng2PopupComponent} from "ng2-popup";
+import {Popup} from "ng2-opd-popup";
 
 @Component({
   selector: 'app-room-details',
@@ -16,10 +16,10 @@ export class RoomDetails implements OnInit {
   roomId: number;
   img_src: string = `${environment.files}/img`;
   private sub: any;
-  @ViewChild(Ng2PopupComponent) popup: Ng2PopupComponent;
 
   constructor(private roomService: RoomService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private popup: Popup) { }
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
@@ -31,10 +31,11 @@ export class RoomDetails implements OnInit {
   }
 
   openPopup() {
-    this.popup.open(Ng2MessagePopupComponent, {
-      title: 'My Title',
-      message: 'My Message'
-    })
+    this.popup.show({
+      header: "Your custom header",
+      confirmBtnContent: "Гаразд",
+      cancleBtnContent: "Відмінити"
+    });
   }
 
   ngOnDestroy() {

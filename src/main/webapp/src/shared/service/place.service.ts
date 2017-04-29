@@ -14,4 +14,9 @@ export class PlaceService {
   getPlaces(): Observable<Place[]> {
     return this.http.get(this.baseUrl).map(response => response.json()._embedded.places as Place[]);
   }
+
+  getPlace(id:number): Observable<Place> {
+    return this.http.get(`${this.baseUrl}/${id}`)
+      .map(response => response.json() as Place);
+  }
 }

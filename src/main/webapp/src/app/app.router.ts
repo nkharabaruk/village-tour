@@ -9,9 +9,12 @@ import {HouseComponent} from "./house/house.component";
 import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "app/house/house.details";
 import {RoomDetails} from "./room/room.details";
+import {PlaceDetails} from "./place/place.details";
+import {ContactComponent} from "./contact/contact.component";
 
 export const router: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'reservations', component: ReservationComponent},
   {path: 'reservations/:res_id', component: ReservationDetails},
   {path: 'houses', component: HouseComponent},
@@ -21,7 +24,9 @@ export const router: Routes = [
   {path: 'houses/:h_id/rooms/:r_id/reservations', redirectTo: 'reservations', pathMatch: 'full'},
   {path: 'rooms', component: RoomComponent},
   {path: 'rooms/:r_id', component: RoomDetails},
-  {path: 'places', component: PlaceComponent}
+  {path: 'places', component: PlaceComponent},
+  {path: 'places/:p_id', component: PlaceDetails},
+  {path: 'contact', component: ContactComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

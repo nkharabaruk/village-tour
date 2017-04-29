@@ -15,5 +15,5 @@ public class Place {
     Long id;
     String name;
     String description;
-
+    String photo;
 }

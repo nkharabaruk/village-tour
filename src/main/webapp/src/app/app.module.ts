@@ -21,6 +21,8 @@ import {HouseDetails} from "./house/house.details";
 import {RoomDetails} from "./room/room.details";
 import {LoginComponent } from './login/login.component';
 import {PopupModule} from "ng2-opd-popup";
+import {PlaceDetails} from "./place/place.details";
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import {PopupModule} from "ng2-opd-popup";
     RoomDetails,
     HomeComponent,
     PlaceComponent,
+    PlaceDetails,
     ReservationComponent,
     ReservationDetails,
     HouseComponent,
     HouseDetails,
-    LoginComponent
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     ButtonsModule.forRoot(),

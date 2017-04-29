@@ -1,0 +1,29 @@
+<h1>
+  {{title}}
+  <button class="btn btn-danger pull-right" onclick="window.history.back()">
+    Повернутись
+    <span class="glyphicon glyphicon-menu-right"></span>
+  </button>
+</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5" style="height:400px; border: 2px solid black">
+      <img class="img-responsive img-rounded" src="{{img_src}}/1.png">
+    </div>
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td style="font-weight: bold">Назва</td>
+            <td>{{place.name}}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Опис</td>
+            <td>{{place.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

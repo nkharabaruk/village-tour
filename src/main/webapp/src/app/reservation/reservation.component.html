@@ -21,7 +21,7 @@
   <tbody>
     <tr *ngFor="let reservation of reservations | async">
       <td>{{reservation.checkInDate}}</td>
-      <td>{{reservation.dayCount}}</td>
+      <td>{{getDayCount(reservation.checkOutDate,reservation.checkInDate)}}</td>
       <td>{{reservation.personCount}}</td>
       <td>{{reservation.operationDate}}</td>
       <td>{{reservation.description}}</td>

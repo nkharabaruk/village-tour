@@ -46,7 +46,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let house of houses | async" routerLink="{{house.id}}">
-        <td>{{house.name}}</td>
+        <td>{{house.id + ' ' + house.name}}</td>
         <td>{{house.type}}</td>
         <td>{{house.address}}</td>
         <td>{{house.description}}</td>

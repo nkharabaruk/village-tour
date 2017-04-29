@@ -18,4 +18,10 @@ export class ReservationComponent implements OnInit {
     this.reservations = this.reservationService.getReservations();
   }
 
+  getDayCount(endDate:string, startDate:string) {
+    let end = new Date(endDate).getTime();
+    let start = new Date(startDate).getTime();
+    return (end - start)/3600/1000/24;
+  }
+
 }

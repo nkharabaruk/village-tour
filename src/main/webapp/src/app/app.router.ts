@@ -15,6 +15,7 @@ import {ContactComponent} from "./contact/contact.component";
 export const router: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'home/houses', redirectTo: 'houses', pathMatch: 'full'},
   {path: 'reservations', component: ReservationComponent},
   {path: 'reservations/:res_id', component: ReservationDetails},
   {path: 'houses', component: HouseComponent},

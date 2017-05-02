@@ -7,7 +7,7 @@ import java.util.Collection;
 
 @Data
 @Entity
-public class Locality {
+public class Village {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;

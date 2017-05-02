@@ -14,15 +14,17 @@ import {PlaceService} from "../shared/service/place.service";
 import {DropdownModule} from "ng2-dropdown";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ReservationService} from "../shared/service/reservation.service";
-import {HouseComponent} from './house/house.component';
+import {HouseComponent} from "./house/house.component";
 import {HouseService} from "../shared/service/house.service";
 import {ReservationDetails} from "./reservation/reservation.details";
 import {HouseDetails} from "./house/house.details";
 import {RoomDetails} from "./room/room.details";
-import {LoginComponent } from './login/login.component';
+import {LoginComponent} from "./login/login.component";
 import {PopupModule} from "ng2-opd-popup";
 import {PlaceDetails} from "./place/place.details";
-import { ContactComponent } from './contact/contact.component';
+import {ContactComponent} from "./contact/contact.component";
+import {SearchParamsService} from "../shared/service/search-params.service";
+import {VillageService} from "../shared/service/village.service";
 
 @NgModule({
   declarations: [
@@ -51,7 +53,14 @@ import { ContactComponent } from './contact/contact.component';
     HttpModule,
     routes
   ],
-  providers: [HouseService, RoomService, PlaceService, ReservationService],
+  providers: [
+    HouseService,
+    RoomService,
+    PlaceService,
+    ReservationService,
+    VillageService,
+    SearchParamsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

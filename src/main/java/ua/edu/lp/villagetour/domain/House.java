@@ -15,7 +15,7 @@ public class House {
     HouseType type;
     String name;
     @ManyToOne
-    Locality locality;
+    Village village;
     String address;
     String description;
     @OneToMany(mappedBy = "house")

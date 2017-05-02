@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 import {House} from "../model/house.model";
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";
+import {Place} from "../model/place.model";
+import {Village} from "../model/village.model";
 
 @Injectable()
 export class HouseService {
@@ -23,13 +25,13 @@ export class HouseService {
       .map(response => response.json() as House);
   }
 
-  findByTypeOrNameOrAddress(type: string, name: string, address: string): Observable<House[]> {
-    return this.http.get(`${this.baseUrl}/search/findByTypeOrNameOrAddress`,
+  findByTypeInOrNameOrVillageName(types: string[], name: string, villageName: string): Observable<House[]> {
+    return this.http.get(`${this.baseUrl}/search/findByTypeInOrNameOrVillageName`,
       {
         search: {
-          type: type,
-          name: name,
-          address: address
+          types: types.length > 0 ? types : "",
+          name: !!name ? name : "",
+          villageName: !!villageName ? villageName : ""
         }
       })
       .map(response => response.json()._embedded.houses as House[]);

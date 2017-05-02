@@ -18,7 +18,7 @@
               <div class="btn-group">
                 <button class="btn btn-default" dropdown-open>{{dropdownTittle}}</button>
                 <ul class="dropdown-menu">
-                  <li *ngFor="let place of places" (click)="dropdownTittle = place.name"><a>{{place.name}}</a></li>
+                  <li *ngFor="let village of villages" (click)="setButtonName(village)"><a>{{village.name}}</a></li>
                 </ul>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                   <span class="caret"></span>
@@ -66,7 +66,7 @@
 
       <div class="col-md-2">
         <div class="row" style="line-height: 600%">
-          <span class="btn btn-success" routerLink="houses"><b>Знайти тури</b></span>
+          <span class="btn btn-success" (click)="search()"><b>Знайти тури</b></span>
         </div>
       </div>
 

@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {House} from "../../shared/model/house.model";
 import {HouseService} from "../../shared/service/house.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {environment} from "../../environments/environment";
+import {SearchParamsService} from "../../shared/service/search-params.service";
 
 @Component({
   selector: 'app-house',
@@ -11,37 +13,60 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 })
 export class HouseComponent implements OnInit {
   title = "Будинки";
-  types: string[] = ["HOTEL", "PRIVATE_SECTOR", "HOSTEL", "SANATORIUM", "CAMPING"];
+  types: { selected: boolean, value: string }[];
   houses: Observable<House[]>;
+  img_src: string = `${environment.files}/img`;
 
   searchForm: FormGroup;
-  type: FormControl;
   name: FormControl;
-  address: FormControl;
+  village: FormControl;
 
-  constructor(private fb: FormBuilder, private houseService: HouseService) { }
+  constructor(private fb: FormBuilder,
+              private houseService: HouseService,
+              private searchParamsService: SearchParamsService) {
+  }
 
   ngOnInit() {
+    this.types = [
+      {selected: false, value: "HOTEL"},
+      {selected: false, value: "PRIVATE_SECTOR"},
+      {selected: false, value: "HOSTEL"},
+      {selected: false, value: "SANATORIUM"},
+      {selected: false, value: "CAMPING"}
+    ];
     this.initSearchForm();
-    this.houses = this.houseService.getHouses();
+    if (!!this.searchParamsService.village) {
+      this.village.setValue(this.searchParamsService.village.name);
+      this.search();
+    } else {
+      this.houses = this.houseService.getHouses();
+    }
+  }
+
+  select(type: { selected: boolean, type: string }) {
+    type.selected = !type.selected;
   }
 
   search(): void {
-    this.houses = this.houseService.findByTypeOrNameOrAddress(
-      this.type.value,
+    let types = this.types.filter(type => type.selected).map(type => type.value);
+    this.houses = this.houseService.findByTypeInOrNameOrVillageName(
+      types,
       this.name.value,
-      this.address.value
+      this.village.value
     );
   }
 
+  reset() {
+    this.searchParamsService.reset();
+    this.ngOnInit();
+  }
+
   private initSearchForm(): void {
-    this.type = new FormControl("");
     this.name = new FormControl();
-    this.address = new FormControl();
+    this.village = new FormControl();
     this.searchForm = this.fb.group({
-      type: this.type,
       name: this.name,
-      address: this.address
+      village: this.village
     });
   }
 

@@ -27,6 +27,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         };
         registry.addResourceHandler("/*.*")
                 .addResourceLocations("classpath:/webapp/");
+        registry.addResourceHandler("/assets/**")
+                .addResourceLocations("classpath:/webapp/assets/");
         registry.addResourceHandler("/*", "/**")
                 .addResourceLocations("classpath:/webapp/index.html")
                 .resourceChain(true).addResolver(resolver);

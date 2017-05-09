@@ -14,7 +14,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let room of rooms | async">
-    <td><img class="img-responsive img-rounded" src="{{img_src}}/1.png" style="height: 100px; width: 100px"></td>
+    <td><img class="img-responsive img-rounded" src="{{img_src}}/{{room.photo}}" style="max-width: 250px"></td>
     <td>{{room.type}}</td>
     <td>{{room.price}}</td>
     <td>{{room.placeCount}}</td>

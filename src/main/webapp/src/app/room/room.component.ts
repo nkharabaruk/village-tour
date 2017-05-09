@@ -11,7 +11,7 @@ import {environment} from "../../environments/environment";
 export class RoomComponent implements OnInit {
   title = "Кімнати";
   rooms: Observable<Room[]>;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/rooms`;
 
   constructor(private roomService: RoomService) { }
 

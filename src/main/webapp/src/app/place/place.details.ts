@@ -1,9 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Place} from "../../shared/model/place.model";
 import {PlaceService} from "../../shared/service/place.service";
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../environments/environment";
-import {Popup} from "ng2-opd-popup";
 
 @Component({
   selector: 'app-place-details',
@@ -14,7 +13,7 @@ export class PlaceDetails implements OnInit {
   title = "Місцевість";
   place: Place = <Place>{};
   placeId: number;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/places`;
   private sub: any;
 
   constructor(private placeService: PlaceService,

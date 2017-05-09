@@ -6,4 +6,6 @@ import ua.edu.lp.villagetour.domain.Reservation;
 
 @Repository
 public interface ReservationRepository extends PagingAndSortingRepository<Reservation, Long> {
+    @Override
+    void deleteAll();
 }

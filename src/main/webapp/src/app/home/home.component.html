@@ -16,8 +16,8 @@
             <div class="date-cell"></div>
             <div class="dropdown" dropdown [dropdownToggle]="false">
               <div class="btn-group">
-                <button class="btn btn-default" dropdown-open>{{dropdownTittle}}</button>
-                <ul class="dropdown-menu">
+                <button class="btn btn-default" dropdown-open>{{village}}</button>
+                <ul class="dropdown-menu" style="cursor: pointer">
                   <li *ngFor="let village of villages" (click)="setButtonName(village)"><a>{{village.name}}</a></li>
                 </ul>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@
           </div>
 
           <div class="col-md-3">
-            <ng2-datepicker [(ngModel)]="date"></ng2-datepicker>
+            <ng2-datepicker [(ngModel)]="selectedStartDate"></ng2-datepicker>
           </div>
 
           <div class="col-md-3">
@@ -36,7 +36,7 @@
             <div class="dropdown" dropdown [dropdownToggle]="false">
               <div class="btn-group">
                 <button class="btn btn-default" dropdown-open>{{day}}</button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" style="cursor: pointer">
                   <li *ngFor="let dc of dayCount" (click)="day = dc"><a>{{dc}}</a></li>
                 </ul>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -51,7 +51,7 @@
             <div class="dropdown" dropdown [dropdownToggle]="false">
               <div class="btn-group">
                 <button class="btn btn-default" dropdown-open>{{person}}</button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" style="cursor: pointer">
                   <li *ngFor="let pc of personCount" (click)="person = pc"><a>{{pc}}</a></li>
                 </ul>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

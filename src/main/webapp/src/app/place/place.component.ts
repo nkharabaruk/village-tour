@@ -12,7 +12,7 @@ import {environment} from "../../environments/environment";
 export class PlaceComponent implements OnInit {
   title = "Місцевості";
   places: Observable<Place[]>;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/places`;
 
   constructor(private placeService: PlaceService) { }
 

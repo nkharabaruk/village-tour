@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {House} from "../../shared/model/house.model";
 import {HouseService} from "../../shared/service/house.service";
@@ -15,7 +15,7 @@ export class HouseComponent implements OnInit {
   title = "Будинки";
   types: { selected: boolean, value: string }[];
   houses: Observable<House[]>;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/houses`;
 
   searchForm: FormGroup;
   name: FormControl;

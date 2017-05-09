@@ -13,13 +13,16 @@ import {Village} from "../../shared/model/village.model";
 })
 export class HomeComponent implements OnInit {
   places: Place[];
-  dropdownTittle: string;
+  village: string;
   dayCount: number[];
   personCount: number[];
   day: string;
   person: string;
   villages: Village[];
   selectedVillage: Village;
+  selectedStartDate: string;
+  selectedDayCount: number;
+  selectedPersonCount: number;
 
   constructor(private router: Router,
               private searchParamsService: SearchParamsService,
@@ -28,14 +31,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dropdownTittle = "Оберіть місто";
+    this.village = "Оберіть село";
     this.dayCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     this.personCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     this.day = "Кількість днів";
     this.person = "Кількість осіб";
+    this.selectedStartDate = Date.now().toString();
     this.villageService.getVillages().subscribe(villages => {
       this.villages = villages;
-      console.log(villages);
     });
     this.placeService.getPlaces().subscribe((places) => {
       this.places = places;
@@ -43,12 +46,15 @@ export class HomeComponent implements OnInit {
   }
 
   setButtonName(village) {
-    this.dropdownTittle = village.name;
+    this.village = village.name;
     this.selectedVillage = village;
   }
 
   search() {
       this.searchParamsService.village = this.selectedVillage;
+      this.searchParamsService.startDate = this.selectedStartDate;
+      this.searchParamsService.dayCount = this.selectedDayCount;
+      this.searchParamsService.personCount = this.selectedPersonCount;
       this.router.navigate(['houses']);
   }
 }

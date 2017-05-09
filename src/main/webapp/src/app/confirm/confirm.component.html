@@ -1,0 +1,21 @@
+<div class="row">
+  <button class="btn btn-info pull-right" data-toggle="modal" data-target="#confirm-modal">
+    Підтвердити бронювання
+  </button>
+</div>
+
+<div #dialog class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h1><b>Бронювання пройшло успішно</b></h1><br>
+      <form>
+        <div class="well text-center h6">
+          Ваша заявка буде розглянута найближчим часом і наш оператор зв'яжеться з вами.
+            Дякуємо за користування послугами нашого сайту!
+        </div>
+        <input type="submit" name="login" class="login loginmodal-submit"
+               value="Гаразд" (click)="submitForm()" data-dismiss="modal">
+      </form>
+    </div>
+  </div>
+</div>

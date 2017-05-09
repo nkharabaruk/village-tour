@@ -25,6 +25,7 @@ import {PlaceDetails} from "./place/place.details";
 import {ContactComponent} from "./contact/contact.component";
 import {SearchParamsService} from "../shared/service/search-params.service";
 import {VillageService} from "../shared/service/village.service";
+import {ConfirmComponent} from "./confirm/confirm.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {VillageService} from "../shared/service/village.service";
     HouseComponent,
     HouseDetails,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    ConfirmComponent
   ],
   imports: [
     ButtonsModule.forRoot(),

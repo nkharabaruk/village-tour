@@ -1,11 +1,9 @@
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import 'rxjs/add/operator/map';
+import "rxjs/add/operator/map";
 import {House} from "../model/house.model";
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";
-import {Place} from "../model/place.model";
-import {Village} from "../model/village.model";
 
 @Injectable()
 export class HouseService {

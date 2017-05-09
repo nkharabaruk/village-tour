@@ -47,7 +47,7 @@
       </thead>
       <tbody></tbody>
       <tr *ngFor="let house of houses | async" routerLink="{{house.id}}" style="cursor: pointer">
-        <td><img class="img-responsive img-rounded" src="{{img_src}}/1.png" style="height: 100px; width: 100px"></td>
+        <td><img class="img-responsive img-rounded" src="{{img_src}}/{{house.photo}}" style="max-width: 250px"></td>
         <td>{{house.name}}</td>
         <td>{{house.type}}</td>
         <td>{{house.address}}</td>

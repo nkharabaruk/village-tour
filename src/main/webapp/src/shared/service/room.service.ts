@@ -1,6 +1,6 @@
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import 'rxjs/add/operator/map';
+import "rxjs/add/operator/map";
 import {Room} from "../model/room.model";
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";

@@ -1,5 +1,5 @@
 <div class="row">
-  <button class="btn btn-info pull-right" data-toggle="modal" data-target="#login-modal">
+  <button class="btn btn-info pull-right" data-toggle="modal" data-target="#login-modal" (click)="createReservation()">
     Забронювати
   </button>
 </div>
@@ -9,9 +9,10 @@
     <div class="loginmodal-container">
       <h1>Введіть ваші дані</h1><br>
       <form>
-        <input type="text" name="name" placeholder="Ім'я">
-        <input type="text" name="surname" placeholder="Прізвище">
-        <input type="text" name="phone" placeholder="Номер телефону">
+        <input type="text" name="name" placeholder="Ім'я" [(ngModel)]="name">
+        <input type="text" name="surname" placeholder="Прізвище" [(ngModel)]="surname">
+        <input type="text" name="phone" placeholder="Номер телефону" [(ngModel)]="phone">
+        <input type="text" name="description" placeholder="Додаткові побажання" [(ngModel)]="description">
         <input type="submit" name="login" class="login loginmodal-submit" value="Гаразд" (click)="submitForm()" data-dismiss="modal">
       </form>
     </div>

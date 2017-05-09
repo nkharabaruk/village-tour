@@ -8,8 +8,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-5" style="height:400px; border: 2px solid black">
-      <img class="img-responsive img-rounded" src="{{img_src}}/1.png">
+    <div class="col-md-5" style="max-width: 550px">
+      <img class="img-responsive img-rounded" src="{{img_src}}/{{room.photo}}">
     </div>
     <div class="col-md-6">
       <table class="table">
@@ -45,9 +45,9 @@
 
 <router-outlet></router-outlet>
 
-<button class="btn btn-danger pull-right" (click)="openPopup()">
-  Кнопка
-</button>
+<!--<button class="btn btn-danger pull-right" (click)="openPopup()">-->
+  <!--Кнопка-->
+<!--</button>-->
 
 <popup>
   <form>

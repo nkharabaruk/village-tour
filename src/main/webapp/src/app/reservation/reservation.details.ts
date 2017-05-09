@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs/Observable";
+import {Component, OnInit} from "@angular/core";
 import {Reservation} from "../../shared/model/reservation.model";
 import {ReservationService} from "../../shared/service/reservation.service";
 import {ActivatedRoute} from "@angular/router";

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {RoomService} from "../shared/service/room.service";
 import {Observable} from "rxjs";
 import {Room} from "../shared/model/room.model";

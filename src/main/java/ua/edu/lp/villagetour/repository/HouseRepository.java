@@ -4,7 +4,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ua.edu.lp.villagetour.domain.House;
-import ua.edu.lp.villagetour.domain.Place;
 import ua.edu.lp.villagetour.domain.enums.HouseType;
 
 import java.util.Collection;

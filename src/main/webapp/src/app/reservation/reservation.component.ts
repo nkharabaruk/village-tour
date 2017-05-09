@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {Reservation} from "../../shared/model/reservation.model";
 import {ReservationService} from "../../shared/service/reservation.service";

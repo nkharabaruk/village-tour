@@ -1,5 +1,5 @@
 import {ModuleWithProviders} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 
 import {RoomComponent} from "./room/room.component";
 import {HomeComponent} from "./home/home.component";
@@ -18,6 +18,8 @@ export const router: Routes = [
   {path: 'home/houses', redirectTo: 'houses', pathMatch: 'full'},
   {path: 'reservations', component: ReservationComponent},
   {path: 'reservations/:res_id', component: ReservationDetails},
+  {path: 'reservations/home', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'reservations/houses', redirectTo: 'houses', pathMatch: 'full'},
   {path: 'houses', component: HouseComponent},
   {path: 'houses/:h_id', component: HouseDetails},
   {path: 'houses/:h_id/rooms/:r_id', component: RoomDetails},
@@ -25,6 +27,7 @@ export const router: Routes = [
   {path: 'houses/:h_id/rooms/:r_id/reservations', redirectTo: 'reservations', pathMatch: 'full'},
   {path: 'rooms', component: RoomComponent},
   {path: 'rooms/:r_id', component: RoomDetails},
+  {path: 'rooms/:r_id/reservations', redirectTo: 'reservations', pathMatch: 'full'},
   {path: 'places', component: PlaceComponent},
   {path: 'places/:p_id', component: PlaceDetails},
   {path: 'contact', component: ContactComponent}

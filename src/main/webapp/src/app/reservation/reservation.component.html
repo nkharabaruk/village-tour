@@ -1,8 +1,8 @@
 <script src="reservation.component.spec.ts"></script>
 <h1>
   {{title}}
-  <button class="btn btn-danger pull-right" onclick="window.history.back()">
-    Повернутись
+  <button class="btn btn-danger pull-right" routerLink="/houses">
+    Забронювати ще
     <span class="glyphicon glyphicon-menu-right"></span>
   </button>
 </h1>
@@ -15,7 +15,7 @@
       <th>Кількість осіб</th>
       <th>Дата операції</th>
       <th>Опис</th>
-      <th>Переглянути</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,15 @@
       <td>{{reservation.personCount}}</td>
       <td>{{reservation.operationDate}}</td>
       <td>{{reservation.description}}</td>
-      <td><div class="btn" routerLink="{{reservation.id}}">Перейти</div></td>
+      <td><div class="btn" routerLink="{{reservation.id}}">Переглянути</div></td>
     </tr>
   </tbody>
 </table>
+
+<div class="row">
+  <div class="col-md-8">
+    <app-confirm></app-confirm>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Room} from "../../shared/model/room.model";
 import {RoomService} from "../../shared/service/room.service";
 import {ActivatedRoute} from "@angular/router";
@@ -14,7 +14,7 @@ export class RoomDetails implements OnInit {
   title = "Кімната";
   room: Room = <Room>{};
   roomId: number;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/rooms`;
   private sub: any;
 
   constructor(private roomService: RoomService,

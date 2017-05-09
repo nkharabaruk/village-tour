@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {House} from "../../shared/model/house.model";
 import {HouseService} from "../../shared/service/house.service";
 import {ActivatedRoute} from "@angular/router";
@@ -13,7 +13,7 @@ export class HouseDetails implements OnInit {
   title = "Бронювання будинку";
   house: House = <House>{};
   houseId: number;
-  img_src: string = `${environment.files}/img`;
+  img_src: string = `${environment.files}/houses`;
   private sub: any;
 
   constructor(private houseService: HouseService,
